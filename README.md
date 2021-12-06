@@ -21,7 +21,7 @@ Here you have a guide:
 
 | Key | Description |
 |-----|-------------|
-| MONGO_DNS_SEEDLIST_CONNECTION | Set this value using a DNSseedlist connection format. It should be something like this: mongodb+srv://user:password@uri/database |
+| MONGO_URL | Set this value using a DNS seed list connection format. It should be something like this: mongodb+srv://user:password@uri/database |
 
 ### 💻 Tricks for development
 * Run the linter: `npm run lint`

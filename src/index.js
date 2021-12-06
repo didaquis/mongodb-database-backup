@@ -4,7 +4,7 @@ dotenv.config();
 import { logger, endLogger } from './helpers/logger.js';
 import { createBackup } from './createBackup.js';
 
-const databaseURI = process.env.MONGO_DNS_SEEDLIST_CONNECTION || '';
+const databaseURI = process.env.MONGO_URL || '';
 
 createBackup(spawn, logger, databaseURI);
 
