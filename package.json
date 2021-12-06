@@ -12,8 +12,8 @@
     "backup",
     "database"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Dídac García (https://didaquis.github.io/)",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^10.0.0"
   }
