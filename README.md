@@ -45,5 +45,3 @@ mongorestore --drop --nsFrom='XXXXXXXX.*' --nsTo='ZZZZZZZZ.*' --archive=backups/
 * https://docs.mongodb.com/database-tools/
 * https://docs.mongodb.com/manual/tutorial/backup-and-restore-tools/
 * https://docs.mongodb.com/manual/core/backups/
-* https://www.w3resource.com/mongodb/mongodb-backup-restore.php
-* https://stackoverflow.com/questions/36321899/mongorestore-to-a-different-database
