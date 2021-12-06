@@ -29,7 +29,7 @@ Here you have a guide:
 
 
 ### 📚 How to restore a database on a local instance of MongoDB server using a backup?
-The following command will import the database backup to the mongod instance running on the localhost interface (port 27017). Here is the command. Here we mention the folder name, so the database backup from the mention folder will be imported:
+The following command will import the database backup to the mongod instance running on the localhost interface (port 27017). Here is the command. Note that this command will delete the database before restoring the backup:
 `mongorestore --drop --archive=backups/2021-12-06.gz --gzip`
 
 If you prefer rename your database during restoration process, use this command instead:
@@ -39,6 +39,16 @@ If you prefer rename your database during restoration process, use this command 
 mongorestore --drop --nsFrom='XXXXXXXX.*' --nsTo='ZZZZZZZZ.*' --archive=backups/2021-12-06.gz --gzip
 ```
 
+### 📚 How to restore a database on a cloud instance of MongoDB server using a backup?
+The following command will restore the database on a cloud instance. Note that this command will delete the database before restoring the backup:
+`mongorestore --drop --uri=mongodb+srv://<user>:<password>@<uri>/<database> --archive=backups/2021-12-06.gz --gzip`
+
+If you prefer rename your database during restoration process, use this command instead:
+```sh
+# Change the value  of XXXXXXXX to the current database name
+# Change the value  of ZZZZZZZZ to the desired database name
+mongorestore --drop --uri=mongodb+srv://<user>:<password>@<uri>/<database> --nsFrom='XXXXXXXX.*' --nsTo='ZZZZZZZZ.*' --archive=backups/2021-12-06.gz --gzip
+```
 
 ### 📚 Useful links
 
