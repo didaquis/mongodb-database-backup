@@ -1,6 +1,6 @@
 {
   "name": "didibudget-database-backup",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "description": "Simple script to obtain database backups",
   "main": "src/index.js",
@@ -10,6 +10,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js .",
+    "delete_all_backups": "rimraf backups/*.gz",
     "backup": "node ."
   },
   "keywords": [
@@ -21,5 +23,16 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.4.0",
+    "eslint-plugin-no-lenght": "^1.0.2-0",
+    "husky": "^4.3.8",
+    "rimraf": "^3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }

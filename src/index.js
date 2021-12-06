@@ -1,7 +1,7 @@
 const { spawn } = require('child_process');
 require('dotenv').config();
 
-
+// eslint-disable-next-line no-magic-numbers
 const timeout = 5 * 60 * 1000; // Five minutes
 
 const mongoDNSseedlist = process.env.MONGO_DNS_SEEDLIST_CONNECTION || '';
@@ -14,25 +14,30 @@ const now = new Date().toISOString();
 const date = now.split('T')[0];
 
 const backupProcess = spawn('mongodump', [
-    `--uri=${mongoDNSseedlist}`,
-    `--archive=./backups/${date}.gz`,
-    '--gzip'
-    ], { timeout: timeout });
+	`--uri=${mongoDNSseedlist}`,
+	`--archive=./backups/${date}.gz`,
+	'--gzip'], { timeout: timeout });
 
 backupProcess.on('exit', (code, signal) => {
-    if(code) 
-        console.log('Backup process exited with code ', code);
-    else if (signal)
-        console.error('Backup process was killed with singal ', signal);
-    else 
-        console.log('The database has been successfully backed up')
+	if (code) {
+		// eslint-disable-next-line no-console
+		console.log('Backup process exited with code ', code);
+	} else if (signal) {
+		// eslint-disable-next-line no-console
+		console.error('Backup process was killed with singal ', signal);
+	} else {
+		// eslint-disable-next-line no-console
+		console.log('The database has been successfully backed up');
+	}
 });
 
 backupProcess.stdout.on('data', (data) => {
+	// eslint-disable-next-line no-console
 	console.log(`stdout: ${data}`);
-})
+});
 
 backupProcess.on('error', (err) => {
+	// eslint-disable-next-line no-console
 	console.error('Failed on the subprocess.', err);
 });
 
