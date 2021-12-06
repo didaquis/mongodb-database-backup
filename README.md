@@ -21,3 +21,7 @@ Here you have a guide:
 | Key | Description |
 |-----|-------------|
 | MONGO_DNS_SEEDLIST_CONNECTION | Set this value only if you are using the DNSseedlist connection format. It should be something like this: mongodb+srv://user:password@uri/database |
+
+### 💻 Tricks for development
+* Run the linter: `npm run lint`
+* Delete all backups files: `npm run delete_all_backups`
