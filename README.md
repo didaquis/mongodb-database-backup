@@ -1,4 +1,4 @@
-# didibudget-database-backup
+# mongodb-database-backup
 
 This project contains a small script that allows to obtain a backup copy of the database.
 
@@ -13,7 +13,7 @@ This project contains a small script that allows to obtain a backup copy of the 
 * Configure the application:
   * Duplicate the configuration file `_env` and rename it as `.env`
   * Edit the file `.env`
-* Then use: `npm run backup` to obtain a full backup of your database. 
+* Then use: `npm run backup` to obtain a full backup of your database. You will get the backup on folder `/backups`. The backup is a compressed file whose name is the current date. For example: `2021-12-06.gz`.
 
 **Do you need help with `.env` file?** 
 

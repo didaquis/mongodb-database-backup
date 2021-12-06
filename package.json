@@ -1,6 +1,6 @@
 {
-  "name": "didibudget-database-backup",
-  "version": "0.0.3",
+  "name": "mongodb-database-backup",
+  "version": "0.0.4",
   "private": true,
   "description": "Simple script to obtain database backups",
   "main": "src/index.js",
@@ -15,7 +15,7 @@
     "backup": "node ."
   },
   "keywords": [
-    "didibudget",
+    "mongodb",
     "backup",
     "database"
   ],
