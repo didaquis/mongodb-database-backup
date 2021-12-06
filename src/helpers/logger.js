@@ -1,12 +1,12 @@
 /* Home doc */
 /**
- * @file Configuration settings for logger module
+ * @file logger module
  * @see module:logger
  */
 
 /* Module doc */
 /**
- * Configuration settings for logger module
+ * logger module
  * @module logger
  */
 
