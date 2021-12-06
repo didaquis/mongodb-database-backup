@@ -1,2 +1,2 @@
 # MongoDB: DNS Seedlist Connection Format
-MONGO_DNS_SEEDLIST_CONNECTION=mongodb+srv://<user>:<PASSWORD>@<uri>/<database>
+MONGO_DNS_SEEDLIST_CONNECTION=mongodb+srv://<user>:<password>@<uri>/<database>
