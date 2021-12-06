@@ -25,3 +25,11 @@ Here you have a guide:
 ### 💻 Tricks for development
 * Run the linter: `npm run lint`
 * Delete all backups files: `npm run delete_all_backups`
+
+
+### 📚 Useful links
+
+* https://docs.mongodb.com/database-tools/
+* https://docs.mongodb.com/manual/tutorial/backup-and-restore-tools/
+* https://docs.mongodb.com/manual/core/backups/
+* https://www.w3resource.com/mongodb/mongodb-backup-restore.php
