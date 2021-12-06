@@ -1,8 +1,13 @@
 {
   "name": "didibudget-database-backup",
   "version": "0.0.1",
+  "private": true,
   "description": "Simple script to obtain database backups",
   "main": "src/index.js",
+  "engines": {
+    "node": "^14.17"
+  },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "backup": "node ."
