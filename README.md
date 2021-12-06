@@ -29,8 +29,16 @@ Here you have a guide:
 
 
 ### 📚 How to restore a database on a local instance of MongoDB server using a backup?
-The following command will import the database backup in the myinfo folder under the dump folder to the mongod instance running on the localhost interface (port 27017). Here is the command. Here we mention the folder name, so the database backup from the mention folder will be imported:
-`mongorestore --archive=backups/2021-12-06.gz --gzip --drop`
+The following command will import the database backup to the mongod instance running on the localhost interface (port 27017). Here is the command. Here we mention the folder name, so the database backup from the mention folder will be imported:
+`mongorestore --drop --archive=backups/2021-12-06.gz --gzip`
+
+If you prefer rename your database during restoration process, use this command instead:
+```sh
+# Change the value  of XXXXXXXX to the current database name
+# Change the value  of ZZZZZZZZ to the desired database name
+mongorestore --drop --nsFrom='XXXXXXXX.*' --nsTo='ZZZZZZZZ.*' --archive=backups/2021-12-06.gz --gzip
+```
+
 
 ### 📚 Useful links
 
