@@ -14,42 +14,23 @@ if (!mongoDNSseedlist) {
 const now = new Date().toISOString();
 const date = now.split('T')[0];
 
-const backupProcess = spawn('mongodump', [
+const backupChildProcess = spawn('mongodump', [
 	`--uri=${mongoDNSseedlist}`,
 	`--archive=./backups/${date}.gz`,
 	'--gzip'], { timeout: timeout });
 
-backupProcess.on('exit', (code, signal) => {
-	if (code) {
+backupChildProcess.on('exit', (code, signal) => {
+	if (code || signal) {
 		// eslint-disable-next-line no-console
-		console.log('Backup process exited with code ', code);
-	} else if (signal) {
-		// eslint-disable-next-line no-console
-		console.error('Backup process was killed with singal ', signal);
-	} else {
-		// eslint-disable-next-line no-console
-		console.log('The database has been successfully backed up');
+		console.error(`child process exited with code ${code} and signal ${signal}`);
+		return;
 	}
-});
 
-backupProcess.stdout.on('data', (data) => {
 	// eslint-disable-next-line no-console
-	console.log(`stdout: ${data}`);
+	console.log('The database has been successfully backed up');
 });
 
-backupProcess.on('error', (err) => {
+backupChildProcess.on('error', (err) => {
 	// eslint-disable-next-line no-console
-	console.error('Failed on the subprocess.', err);
+	console.error('Failed on the child process', err);
 });
-
-
-/*
-const { spawn } = require('child_process');
-const controller = new AbortController();
-const { signal } = controller;
-const grep = spawn('grep', ['ssh'], { signal });
-grep.on('error', (err) => {
-  // This will be called with err being an AbortError if the controller aborts
-});
-controller.abort(); // Stops the child process
-*/
