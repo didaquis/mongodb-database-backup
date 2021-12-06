@@ -1,6 +1,6 @@
 {
   "name": "didibudget-database-backup",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "description": "Simple script to obtain database backups",
   "main": "src/index.js",
@@ -22,7 +22,8 @@
   "author": "Dídac García (https://didaquis.github.io/)",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "log4js": "^6.3.0"
   },
   "devDependencies": {
     "eslint": "^8.4.0",
