@@ -1,5 +1,6 @@
-const { spawn } = require('child_process');
-require('dotenv').config();
+import { spawn } from 'child_process';
+import dotenv from 'dotenv';
+dotenv.config();
 
 // eslint-disable-next-line no-magic-numbers
 const timeout = 5 * 60 * 1000; // Five minutes
