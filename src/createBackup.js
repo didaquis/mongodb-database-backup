@@ -14,9 +14,10 @@
 import { getDate } from './helpers/getDate.js';
 
 /**
- *
- * @param {Object} spawn	- A module that provides the ability to generate subprocesses
- * @param {Object} logger 	- A library to log information
+ * It create a backup file
+ * @param {Object} spawn		- A module that provides the ability to generate subprocesses
+ * @param {Object} logger 		- A library to log information
+ * @param {string} databaseURI 	- DNS seed list connection format
  */
 export const createBackup = (spawn, logger, databaseURI) => {
 	if (!databaseURI) {
