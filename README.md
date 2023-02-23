@@ -6,7 +6,7 @@ This project contains a small script that allows to obtain a backup copy of the 
 
 
 ### 📝 Requirements
-* Node.js 14.17 or higher
+* Node.js 16.19 or higher
 
 ### 📚 How to run the script?
 * Use the command: `npm install`.

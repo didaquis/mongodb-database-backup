@@ -5,7 +5,7 @@
   "description": "Simple script to obtain database backups",
   "main": "src/index.js",
   "engines": {
-    "node": "^14.17"
+    "node": "^16.19"
   },
   "type": "module",
   "scripts": {
